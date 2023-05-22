@@ -1,30 +1,23 @@
 package application;
 
-import java.util.Locale;
-import java.util.Scanner;
+import entities.Order;
+import entities.enums.OrderStatus;
+import java.util.Date;
 
 public class Program {
 
 	public static void main(String[] args) {
-		Locale.setDefault(Locale.US);
-		Scanner sc = new Scanner(System.in);
+
+		Order order = new Order(1080, new Date(), OrderStatus.PENDING_PAYMENT);
 		
-		int n = sc.nextInt();
-		double[] vect = new double[n];
+		System.out.println(order);
 		
-		for (int i = 0; i<n; i++) {
-			vect[i] = sc.nextDouble();
-		}
+		OrderStatus os1 = OrderStatus.DELIVERED;
 		
-		double sum = 0.0;
-		for (int  i=0; i<n; i++) {
-			sum += vect[i];
-		}
-		double avg = sum / n;
+		OrderStatus os2 = OrderStatus.valueOf("DELIVERED");
 		
-		System.out.printf("%.2f%n", avg);
-		
-		sc.close();
+		System.out.println(os1);
+		System.out.println(os2);
 	}
 
 }
