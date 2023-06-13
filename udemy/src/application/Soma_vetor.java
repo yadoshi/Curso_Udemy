@@ -6,33 +6,33 @@ import java.util.Scanner;
 public class Soma_vetor {
 
 	public static void main(String[] args) {
-		
+
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
-		
-		
+
+
 		int n = sc.nextInt();
 		double[] vet = new double[n];
-		
+
 		for (int i=0; i<vet.length; i++) {
 			vet[i] = sc.nextDouble();
 		}
 
 		double soma = 0.0;
-		
-		for (int i=0;i<vet.length;i++) {
-			soma += vet[i];
+
+		for (double element : vet) {
+			soma += element;
 		}
-		
+
 		double avg = soma / n;
-		
-		for (int i=0; i<vet.length; i++) {
-			System.out.println(vet[i]);
+
+		for (double element : vet) {
+			System.out.println(element);
 		}
-		
+
 		System.out.println(soma);
 		System.out.println(avg);
-		
+
 		sc.close();
 	}
 
